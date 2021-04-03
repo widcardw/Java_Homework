@@ -1,0 +1,30 @@
+package src.T03;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Test2_02 {
+    public static void main(String[] args) {
+        System.out.print("请输入字符串: ");
+        Scanner input = new Scanner(System.in);
+        String src = input.next();
+        input.close();
+        String compressed = compressString(src);
+        System.out.println("压缩结果是: " + compressed);
+    }
+    // TODO 特殊符号的匹配
+    public static String compressString(String src) {
+        int i = 0;
+        while (true) {
+            String ch = src.substring(i, i + 1);
+            Pattern p = Pattern.compile(ch + "{1,}");
+            Matcher m = p.matcher(src);
+            src = m.replaceAll(ch);
+            i++;
+            if (i >= src.length())
+                break;
+        }
+        return src;
+    }
+}
