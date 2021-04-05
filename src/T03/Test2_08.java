@@ -28,18 +28,16 @@ public class Test2_08 {
             String[] pair = string.split(":");
             map.put(pair[0], pair[1]);
         }
-        // System.out.println(map);
     }
 
     public static String getValue(String template, Map<String, String> map) {
-        Pattern p = Pattern.compile("\\$\\{.*?\\}");
+        Pattern p = Pattern.compile("\\$\\{.*?\\}");  // Æ¥Åä¾¡Á¿¶ÌµÄ
         Matcher m = p.matcher(template);
-        StringBuffer sb = new StringBuffer();
+        StringBuffer sb = new StringBuffer();  // ×Ö·û´®buffer
         while (m.find()) {
             String param = m.group();
             Object value = map.get(param.substring(2, param.length() - 1));
-            // System.out.println(param + " " + value);
-            m.appendReplacement(sb, value == null ? "" : value.toString());
+            m.appendReplacement(sb, value == null ? "" : value.toString());  // ½«Æ¥Åäµ½µÄÌæ»»
         }
         m.appendTail(sb);
         return sb.toString();

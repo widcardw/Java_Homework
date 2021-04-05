@@ -13,7 +13,7 @@ public class Test2_02 {
         String compressed = compressString(src);
         System.out.println("压缩结果是: " + compressed);
     }
-    // TODO 特殊符号的匹配
+    // TODO 特殊符号的匹配, 目前还不能匹配括号!!!
     public static String compressString(String src) {
         int i = 0;
         while (true) {
