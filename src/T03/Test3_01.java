@@ -12,11 +12,29 @@ public class Test3_01 {
         scanner.close();
         Stack<Stack<Vector<String>>> solutions = new Stack<>();
         Stack<Vector<String>> way = new Stack<>();  // 好像可以用char? 因为只有一个汉字?
-        crossTheRiver(n, n, n, solutions, way);
+        crossTheRiver2(n, solutions, way);
         int count = solutions.size();
         System.out.printf("一共有%d种渡河方案\n", count);
         for (int i = 0; i < count; i++) {
             System.out.println("第" + (i + 1) + "种: " + solutions.get(i));
+        }
+    }
+
+    public static void crossTheRiver2(int n, Stack<Stack<Vector<String>>> solutions, Stack<Vector<String>> way) {
+        // Stack<Stack<Vector<String>>> solutions = new Stack<>();
+        // Stack<Vector<String>> way = new Stack<>();
+        if (n > 4) {
+            crossTheRiver(4, 4, 4, solutions, way);
+            Vector<String> v = new Vector<>();
+            v.add("黑"); v.add("白");
+            for (int i = 0; i < 16; i++) {
+                for (int j = 0; j < n - 4; j++) {
+                    solutions.get(i).insertElementAt(v, 2);
+                }
+            }
+        }
+        else {
+            crossTheRiver(n, n, n, solutions, way);
         }
     }
 

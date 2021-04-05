@@ -19,7 +19,7 @@ public class Test2_12 {
         System.out.println(result);
     }
 
-    // TODO
+    // TODO 还没写完呢, 没法把括号全删掉, 打算用 stack 操作重新写
     public static List<Character> simplifyFomula(List<Character> list) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) == '+') {
