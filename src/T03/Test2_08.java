@@ -8,11 +8,11 @@ import java.util.regex.Pattern;
 
 public class Test2_08 {
     public static void main(String[] args) {
-        System.out.print("ÇëÊäÈëÄ£°å´®£º");
+        System.out.print("è¯·è¾“å…¥æ¨¡æ¿ä¸²ï¼š");
         Scanner input = new Scanner(System.in);
         String fomula = input.nextLine();
         // System.out.println(fomula);
-        System.out.print("ÇëÊäÈëÊı¾İÔ´´®£º");
+        System.out.print("è¯·è¾“å…¥æ•°æ®æºä¸²ï¼š");
         String data = input.nextLine();
         input.close();
 
@@ -31,13 +31,13 @@ public class Test2_08 {
     }
 
     public static String getValue(String template, Map<String, String> map) {
-        Pattern p = Pattern.compile("\\$\\{.*?\\}");  // Æ¥Åä¾¡Á¿¶ÌµÄ
+        Pattern p = Pattern.compile("\\$\\{.*?\\}");  // åŒ¹é…å°½é‡çŸ­çš„
         Matcher m = p.matcher(template);
-        StringBuffer sb = new StringBuffer();  // ×Ö·û´®buffer
+        StringBuffer sb = new StringBuffer();  // å­—ç¬¦ä¸²buffer
         while (m.find()) {
             String param = m.group();
             Object value = map.get(param.substring(2, param.length() - 1));
-            m.appendReplacement(sb, value == null ? "" : value.toString());  // ½«Æ¥Åäµ½µÄÌæ»»
+            m.appendReplacement(sb, value == null ? "" : value.toString());  // å°†åŒ¹é…åˆ°çš„æ›¿æ¢
         }
         m.appendTail(sb);
         return sb.toString();
