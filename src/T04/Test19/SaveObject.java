@@ -2,8 +2,10 @@ package src.T04.Test19;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.InputMismatchException;
 
 public class SaveObject {
     public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class SaveObject {
             oos.writeObject(c1);
             oos.close(); fos.close();
         }
-        catch (Exception e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -29,6 +31,9 @@ public class SaveObject {
             Complex c2 = (Complex) ois.readObject();
             System.out.println(c2.toString());
             ois.close(); fis.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
         catch (Exception e) {
             e.printStackTrace();

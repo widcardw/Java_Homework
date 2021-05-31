@@ -2,6 +2,7 @@ package src.T04.Test15;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class WritePrimes {
@@ -36,7 +37,7 @@ public class WritePrimes {
 
             fos.close();
         }
-        catch (Exception e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
     }

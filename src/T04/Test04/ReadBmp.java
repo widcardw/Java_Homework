@@ -2,10 +2,11 @@ package src.T04.Test04;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.io.IOException;
 
 public class ReadBmp {
     public static void main(String[] args) {
-        ReadBmp bmp = new ReadBmp("./src/T04/Test04.bmp");
+        ReadBmp bmp = new ReadBmp("./src/T04/Test04/test.bmp");
         bmp.printInfo();
     }
 
@@ -25,9 +26,11 @@ public class ReadBmp {
     private int biClrImportant;
 
     public ReadBmp(String sourceFile) {
+        FileInputStream fileInputStream = null;
+        BufferedInputStream bufferedInputStream = null;
         try {
-            FileInputStream fileInputStream = new FileInputStream(sourceFile);
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+            fileInputStream = new FileInputStream(sourceFile);
+            bufferedInputStream = new BufferedInputStream(fileInputStream);
             byte[] fileHead = new byte[14];
             bufferedInputStream.read(fileHead, 0, 14);
 
@@ -49,11 +52,10 @@ public class ReadBmp {
             this.biYPelsPerMeter = _4BytestoInt(fileInfo, 31);
             this.biClrUsed = _4BytestoInt(fileInfo, 35);
             this.biClrImportant = _4BytestoInt(fileInfo, 39);
-
             fileInputStream.close();
             bufferedInputStream.close();
         }
-        catch (Exception e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
     }

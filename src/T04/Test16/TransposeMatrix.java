@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,7 @@ public class TransposeMatrix {
 
             fos.close(); br.close(); isr.close(); fis.close();
         }
-        catch (Exception e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
     }

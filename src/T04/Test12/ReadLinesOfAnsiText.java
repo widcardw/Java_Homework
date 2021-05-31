@@ -3,6 +3,7 @@ package src.T04.Test12;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ReadLinesOfAnsiText {
@@ -23,7 +24,7 @@ public class ReadLinesOfAnsiText {
             isr.close();
             fis.close();
         }
-        catch (Exception e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
     }

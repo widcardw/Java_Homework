@@ -2,6 +2,7 @@ package src.T04.Test17;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.util.Pair;
@@ -19,7 +20,7 @@ public class SquareNumbers {
                 fos.write(String.format("%d\t%d\n", pair.getKey(), pair.getValue()).getBytes());
             }
         }
-        catch (Exception e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
     }

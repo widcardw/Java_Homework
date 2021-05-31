@@ -2,6 +2,7 @@ package src.T04.Test20;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -28,7 +29,7 @@ public class SaveTree {
             oos.close();
             fos.close();
         }
-        catch(Exception e) {
+        catch(IOException e) {
             e.printStackTrace();
         }
 
