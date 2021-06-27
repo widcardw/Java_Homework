@@ -8,7 +8,7 @@ public class FileCount {
         info[0] = -1; info[1] = info[2] = 0;
         this.getFileInfo(file, info);
     }
-    // info[0] == 文件夹数, info[0] == 文件数, info[2] == 文件总大小
+    // info[0] == 文件夹数, info[1] == 文件数, info[2] == 文件总大小
     private void getFileInfo(File file, int[] info) {
         if (file.exists()) {
             if (file.isDirectory()) {
