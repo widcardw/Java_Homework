@@ -25,13 +25,14 @@ public class Test2_05 {
         // return result;
 
         // TODO
-        // 中文字符串支持还未实现
+        // 中文字符串支持还未实现 👈这个是看编码的
         // src = new String(src.getBytes("GB2312"), "GB2312");
         // System.out.println(src);
-        String result = "";
-        for (int i = 0; i < src.length(); i++) {
-            result = src.charAt(i) + result;
-        }
-        return result;
+        // String result = "";
+        // for (int i = 0; i < src.length(); i++) {
+        //     result = src.charAt(i) + result;
+        // }
+        // return result;
+        return new StringBuffer(src).reverse().toString();
     }
 }

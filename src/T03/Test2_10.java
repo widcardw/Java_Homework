@@ -13,11 +13,12 @@ public class Test2_10 {
     }
 
     public static String reverse(String src) {
-        String result = "";
-        for (int i = 0; i < src.length(); i++) {
-            result = src.charAt(i) + result;
-        }
-        return result;
+        // String result = "";
+        // for (int i = 0; i < src.length(); i++) {
+        //     result = src.charAt(i) + result;
+        // }
+        // return result;
+        return new StringBuffer(src).reverse().toString();
     }
 
     public static String reverseLetters(String src) {

@@ -31,13 +31,13 @@ public class Test2_08 {
     }
 
     public static String getValue(String template, Map<String, String> map) {
-        Pattern p = Pattern.compile("\\$\\{.*?\\}");  // 匹配尽量短的
+        Pattern p = Pattern.compile("\\$\\{(.+?)\\}");  // 匹配尽量短的
         Matcher m = p.matcher(template);
         StringBuffer sb = new StringBuffer();  // 字符串buffer
         while (m.find()) {
-            String param = m.group();
-            Object value = map.get(param.substring(2, param.length() - 1));
-            m.appendReplacement(sb, value == null ? "" : value.toString());  // 将匹配到的替换
+            String param = m.group(1);
+            String value = map.get(param);
+            m.appendReplacement(sb, value);  // 将匹配到的替换
         }
         m.appendTail(sb);
         return sb.toString();

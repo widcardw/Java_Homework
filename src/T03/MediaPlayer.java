@@ -1,18 +1,18 @@
 package src.T03;
 
 public interface MediaPlayer {
-    void decode();  // 解码
-    void encode();  // 编码
-    void pixFmt();  // 色彩空间
-    void codec();   // 编解码
-    void format();  // 封装格式
-    void filter();  // 滤镜
-    void colors();  // 色彩
-    void muxers();  // 视频复用器(整流器)
-    void demuxers();// 分流器
-    void size();    // 视频尺寸
-    void subtitles(); // 字幕
-    void play(String src);
+    public abstract void decode();  // 解码
+    public abstract void encode();  // 编码
+    public abstract void pixFmt();  // 色彩空间
+    public abstract void codec();   // 编解码
+    public abstract void format();  // 封装格式
+    public abstract void filter();  // 滤镜
+    public abstract void colors();  // 色彩
+    public abstract void muxers();  // 视频复用器(整流器)
+    public abstract void demuxers();// 分流器
+    public abstract void size();    // 视频尺寸
+    public abstract void subtitles(); // 字幕
+    public abstract void play(String src);
 }
 
 class MPEGPlayer implements MediaPlayer {
